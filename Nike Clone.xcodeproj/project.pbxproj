@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8FC2032C2D18155700AB7C2A /* airJordan11RetroVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2032B2D18155700AB7C2A /* airJordan11RetroVideo.mp4 */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8FC203112D18085000AB7C2A /* Nike Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nike Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC2032B2D18155700AB7C2A /* airJordan11RetroVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = airJordan11RetroVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +39,7 @@
 			children = (
 				8FC203132D18085000AB7C2A /* Nike Clone */,
 				8FC203122D18085000AB7C2A /* Products */,
+				8FC2032B2D18155700AB7C2A /* airJordan11RetroVideo.mp4 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC2032C2D18155700AB7C2A /* airJordan11RetroVideo.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

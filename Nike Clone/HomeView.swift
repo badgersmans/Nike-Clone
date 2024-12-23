@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView {
+            VStack {
+                Text("Air Jordan 11 Retro 'Legend Blue'")
+                    .font(.headline)
+                
+                ImageCarousellView(shoe: mockShoe)
+                Spacer()
+                
+            }
         }
-        .padding()
     }
 }
 
