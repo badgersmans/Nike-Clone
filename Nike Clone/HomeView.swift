@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var isReviewsVisible = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -88,6 +89,86 @@ struct HomeView: View {
                 Divider()
                     .padding()
                     .padding(.vertical, 10)
+                
+                HStack { // size & fit section
+                    Button {
+                        
+                    } label: {
+                        Text("Size & Fit")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Image(systemName: "chevron.down")
+                    }
+                    
+                }
+                .padding()
+                .foregroundStyle(.black)
+                
+                Divider()
+                    .padding()
+                    .padding(.vertical, 8)
+                
+                HStack { // reviews section
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.4)) {
+                            isReviewsVisible.toggle()
+                        }
+                    } label: {
+                        Text("Reviews (640)")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Group {
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                            Image(systemName: "star.fill")
+                        }
+                        .imageScale(.small)
+                        
+                        Image(systemName: "chevron.down")
+                            .rotationEffect(.degrees(isReviewsVisible ? 180 : 0)) // Rotate smoothly
+                            .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
+                    }
+                    
+                }
+                .padding()
+                .foregroundStyle(.black)
+                
+                if isReviewsVisible {
+                    // reviews section
+                    VStack(alignment: .leading, spacing: 8) { // review header (title, stars, username, date
+                        Text("Love 11s") // title
+                            .fontWeight(.semibold)
+                        
+                        HStack(spacing: 3) { // review stars
+                            Group {
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                            }
+                            .imageScale(.small)
+                        }
+                        Text("Tomeka0710 · Dec 14, 2024")
+                            .foregroundStyle(Color(.systemGray))
+                        
+                        VStack {
+                            Text("The fit is perfect, and they’re very lightweight. Took off one star because the shipping took a bit longer than expected.bit longer than expebit longer than expected.cted.")
+                                .lineLimit(3)
+                                .lineSpacing(6)
+                        }
+                        .padding(.vertical, 18)
+                    }
+                    .padding()
+                }
+                
+                Divider()
+                    .padding()
+                    .padding(.vertical, 8)
                 
                 
                 
