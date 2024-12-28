@@ -119,7 +119,7 @@ struct HomeView: View {
                             .font(.title3)
                             .fontWeight(.semibold)
                         Spacer()
-                        Group {
+                        HStack(spacing: 4) {
                             Image(systemName: "star.fill")
                             Image(systemName: "star.fill")
                             Image(systemName: "star.fill")
@@ -128,9 +128,19 @@ struct HomeView: View {
                         }
                         .imageScale(.small)
                         
-                        Image(systemName: "chevron.down")
-                            .rotationEffect(.degrees(isReviewsVisible ? 180 : 0)) // Rotate smoothly
-                            .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
+//                        Image(systemName: "chevron.down")
+//                            .rotationEffect(.degrees(isReviewsVisible ? 180 : 0)) // Rotate smoothly
+//                            .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
+                        
+                        // Chevron icon that rotates up-down
+                                    Image(systemName: "chevron.down")
+                                        .rotation3DEffect(
+                                            .degrees(isReviewsVisible ? 180 : 0),
+                                            axis: (x: 1, y: 0, z: 0), // Define the rotation axis (X-axis)
+                                            perspective: 0.5 // Apply some perspective to make it look more natural
+                                        )
+                                        .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
+                             
                     }
                     
                 }
@@ -143,7 +153,7 @@ struct HomeView: View {
                         Text("Love 11s") // title
                             .fontWeight(.semibold)
                         
-                        HStack(spacing: 3) { // review stars
+                        HStack(spacing: 4) { // review stars
                             Group {
                                 Image(systemName: "star.fill")
                                 Image(systemName: "star.fill")
