@@ -99,6 +99,7 @@ struct HomeView: View {
                             .fontWeight(.semibold)
                         Spacer()
                         Image(systemName: "chevron.down")
+                            .imageScale(.large)
                     }
                     
                 }
@@ -109,7 +110,7 @@ struct HomeView: View {
                     .padding()
                     .padding(.vertical, 8)
                 
-                HStack { // reviews section
+                HStack { // reviews button
                     Button {
                         withAnimation(.easeInOut(duration: 0.4)) {
                             isReviewsVisible.toggle()
@@ -127,11 +128,7 @@ struct HomeView: View {
                             Image(systemName: "star.fill")
                         }
                         .imageScale(.small)
-                        
-//                        Image(systemName: "chevron.down")
-//                            .rotationEffect(.degrees(isReviewsVisible ? 180 : 0)) // Rotate smoothly
-//                            .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
-                        
+
                         // Chevron icon that rotates up-down
                                     Image(systemName: "chevron.down")
                                         .rotation3DEffect(
@@ -139,16 +136,17 @@ struct HomeView: View {
                                             axis: (x: 1, y: 0, z: 0), // Define the rotation axis (X-axis)
                                             perspective: 0.5 // Apply some perspective to make it look more natural
                                         )
+                                        .imageScale(.large)
                                         .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
-                             
                     }
+                    .buttonStyle(.plain)
                     
-                }
+                } // end reviews button
                 .padding()
                 .foregroundStyle(.black)
                 
+                // reviews section
                 if isReviewsVisible {
-                    // reviews section
                     VStack(alignment: .leading, spacing: 8) { // review header (title, stars, username, date
                         Text("Love 11s") // title
                             .fontWeight(.semibold)
