@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CapsuleButton: View {
+struct ButtonView: View {
     var label: String
     var imageName: String? = nil
-    var isFilled: Bool = true
+    var isFilled: Bool = false
     var fillColor: Color = .black
-    var textColor: Color = .white
-    var borderColor: Color = .black
+    var textColor: Color = .black
+    var borderColor: Color = .gray
     
     var body: some View {
         Button {
@@ -22,13 +22,13 @@ struct CapsuleButton: View {
             HStack {
                 Text(label)
                     .fontWeight(.semibold)
-                    .foregroundStyle(isFilled ? .white : textColor) // White text for filled, custom text color for bordered
+                    .foregroundStyle(isFilled ? .white : textColor)
                 if let imageName = imageName {
                     Image(systemName: imageName)
                         .foregroundStyle(isFilled ? .white : textColor)
                 }
             }
-            .capsuleButtonStyle(textColor: textColor, fillColor: fillColor, isFilled: isFilled, borderColor: borderColor)
+            .capsuleButtonStyle(textColor: textColor, borderColor: borderColor, fillColor: fillColor, isFilled: isFilled)
         }
     }
 }

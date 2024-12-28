@@ -10,8 +10,8 @@ import SwiftUI
 
 extension View {
     func capsuleButtonStyle(
-        textColor: Color = .white,
-        borderColor: Color = .black,
+        textColor: Color = .black,
+        borderColor: Color = .gray,
         fillColor: Color = .black,
         isFilled: Bool = false
     ) -> some View {

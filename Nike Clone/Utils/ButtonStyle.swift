@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CapsuleButtonStyle: ViewModifier {
-    var textColor: Color = .white
-    var borderColor: Color = .black
+    var textColor: Color = .black
+    var borderColor: Color = .gray
     var fillColor: Color = .black
     var isFilled: Bool = false
 
@@ -23,7 +23,7 @@ struct CapsuleButtonStyle: ViewModifier {
                     .fill(isFilled ? fillColor : Color.clear) // Apply fill or clear based on isFilled
                     .overlay(
                         Capsule()
-                            .stroke(borderColor, lineWidth: 1) // Border is always applied
+                            .stroke(borderColor.opacity(0.7), lineWidth: 1)
                     )
             )
             .foregroundColor(isFilled ? .white : textColor) // Set text color based on filled or bordered
