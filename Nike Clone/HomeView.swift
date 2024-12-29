@@ -194,24 +194,28 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                 )
                             
-//                            Text("Air Jordan 3 Retro 'Black \u{00A0}Cement'")
-                            Text(applyNonBreakingSpaceIfNeeded("Air Jordan 3 Retro 'Black Cement'"))
+                            Text("Air Jordan 3 Retro 'Black Cement'")
                                 .lineLimit(nil)
                                 .fixedSize(horizontal: false, vertical: true)
-                                .frame(maxWidth: 200, alignment: .leading)
-//                                .font(.caption2)
+                                .frame(maxWidth: 280, alignment: .leading)
+                            //                                .font(.caption2)
                                 .fontWeight(.semibold)
-                                .background(.red)
+                                .padding(.bottom, 3)
+                            //                                .background(.red)
+                            
                             Text("Men's Shoes")
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(.systemGray))
-                            Text(939 as NSNumber, formatter: NumberFormatter.currency)
+                            
+                            Text((939 as NSNumber).currency)
                                 .fontWeight(.semibold)
+                                .padding(.top, 10)
+
                         }
                     }
                 } // vstack padding
                 .padding()
-
+                
                 
                 
                 
