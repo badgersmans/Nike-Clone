@@ -39,6 +39,7 @@ struct VideoPlayerView: View {
     var body: some View {
         if let url = Bundle.main.url(forResource: videoName, withExtension: "mp4") {
             VideoPlayer(player: player)
+                .aspectRatio(contentMode: .fill)
                 .onAppear {
                     if player == nil {
                         player = AVPlayer(url: url)
@@ -48,6 +49,7 @@ struct VideoPlayerView: View {
                 .onDisappear {
                     player?.pause()
                 }
+                .padding()
         }
     }
 }

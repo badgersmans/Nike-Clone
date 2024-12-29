@@ -128,16 +128,16 @@ struct HomeView: View {
                             Image(systemName: "star.fill")
                         }
                         .imageScale(.small)
-
+                        
                         // Chevron icon that rotates up-down
-                                    Image(systemName: "chevron.down")
-                                        .rotation3DEffect(
-                                            .degrees(isReviewsVisible ? 180 : 0),
-                                            axis: (x: 1, y: 0, z: 0), // Define the rotation axis (X-axis)
-                                            perspective: 0.5 // Apply some perspective to make it look more natural
-                                        )
-                                        .imageScale(.large)
-                                        .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
+                        Image(systemName: "chevron.down")
+                            .rotation3DEffect(
+                                .degrees(isReviewsVisible ? 180 : 0),
+                                axis: (x: 1, y: 0, z: 0), // Define the rotation axis (X-axis)
+                                perspective: 0.5 // Apply some perspective to make it look more natural
+                            )
+                            .imageScale(.large)
+                            .animation(.easeInOut(duration: 0.4), value: isReviewsVisible)
                     }
                     .buttonStyle(.plain)
                     
@@ -178,6 +178,40 @@ struct HomeView: View {
                     .padding()
                     .padding(.vertical, 8)
                 
+                // suggestions section
+                VStack(alignment: .leading) {
+                    Text("You Might Also Like")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 20)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        VStack(alignment: .leading) {
+                            Image("airJordan11Retro1")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 280, height: 280)
+                                .clipShape(
+                                    RoundedRectangle(cornerRadius: 10)
+                                )
+                            
+//                            Text("Air Jordan 3 Retro 'Black \u{00A0}Cement'")
+                            Text(applyNonBreakingSpaceIfNeeded("Air Jordan 3 Retro 'Black Cement'"))
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(maxWidth: 200, alignment: .leading)
+//                                .font(.caption2)
+                                .fontWeight(.semibold)
+                                .background(.red)
+                            Text("Men's Shoes")
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color(.systemGray))
+                            Text(939 as NSNumber, formatter: NumberFormatter.currency)
+                                .fontWeight(.semibold)
+                        }
+                    }
+                } // vstack padding
+                .padding()
+
                 
                 
                 

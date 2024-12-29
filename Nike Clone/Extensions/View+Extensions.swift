@@ -18,4 +18,3 @@ extension View {
         self.modifier(CapsuleButtonStyle(textColor: textColor, borderColor: borderColor, fillColor: fillColor, isFilled: isFilled))
     }
 }
-
