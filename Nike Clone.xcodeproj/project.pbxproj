@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FB452252D211C750062C791 /* Passwordless in Frameworks */ = {isa = PBXBuildFile; productRef = 8FB452242D211C750062C791 /* Passwordless */; };
 		8FC2032C2D18155700AB7C2A /* airJordan11RetroVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2032B2D18155700AB7C2A /* airJordan11RetroVideo.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB452252D211C750062C791 /* Passwordless in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			);
 			name = "Nike Clone";
 			packageProductDependencies = (
+				8FB452242D211C750062C791 /* Passwordless */,
 			);
 			productName = "Nike Clone";
 			productReference = 8FC203112D18085000AB7C2A /* Nike Clone.app */;
@@ -100,6 +103,9 @@
 			);
 			mainGroup = 8FC203082D18085000AB7C2A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8FB452232D211C750062C791 /* XCRemoteSwiftPackageReference "passwordless-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8FC203122D18085000AB7C2A /* Products */;
 			projectDirPath = "";
@@ -272,7 +278,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "learning-projects.dribble-maryam-money-management-";
+				PRODUCT_BUNDLE_IDENTIFIER = "learning-projects.dribble-maryam-money-management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -301,7 +307,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "learning-projects.dribble-maryam-money-management-";
+				PRODUCT_BUNDLE_IDENTIFIER = "learning-projects.dribble-maryam-money-management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,6 +337,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8FB452232D211C750062C791 /* XCRemoteSwiftPackageReference "passwordless-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bitwarden/passwordless-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8FB452242D211C750062C791 /* Passwordless */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FB452232D211C750062C791 /* XCRemoteSwiftPackageReference "passwordless-ios" */;
+			productName = Passwordless;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8FC203092D18085000AB7C2A /* Project object */;
 }

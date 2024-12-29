@@ -1,0 +1,15 @@
+{
+  "originHash" : "1044c301597a4d25ccda1d826a5dba20c7eb071d846b7dbe8b4f77069ec0f974",
+  "pins" : [
+    {
+      "identity" : "passwordless-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bitwarden/passwordless-ios.git",
+      "state" : {
+        "revision" : "8449e5b6609c41465cd3f29c955512bffa3e244f",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
