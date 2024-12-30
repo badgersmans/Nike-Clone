@@ -11,7 +11,7 @@ import SwiftUI
 struct Nike_CloneApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            Register()
         }
     }
 }
