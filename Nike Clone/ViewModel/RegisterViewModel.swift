@@ -14,15 +14,13 @@ import Foundation
     var passwordValidationState: ValidationState?
     var firstNameValidationState: ValidationState?
     
-    var isValidLogin: Bool = false
-    var isValidRegister: Bool = false
     var confirmPw = ""
     var birthYear: Int = Calendar.current.dateComponents([.year], from: Date()).year!
     
     var emailErrorMessage: String = ""
     var passwordErrorMessage: String = ""
     var nameErrorMessage: String = ""
-
+    
     
     // MARK: - Validator Functions
     //    func passwordsMatch() -> Bool {
@@ -38,35 +36,31 @@ import Foundation
     
     var email = "" {
         didSet {
-                if email.isEmpty {
-                    emailValidationState = .empty
-                    emailErrorMessage = ValidationMessages.emailRequired
-                } else if email.isEmailValid {
-                    emailValidationState = .valid
-                    emailErrorMessage = ""
-                } else {
-                    emailValidationState = .invalid
-                    emailErrorMessage = ValidationMessages.emailInvalid
-                }
-
-            updateValidRegister()
+            if email.isEmpty {
+                emailValidationState = .empty
+                emailErrorMessage = ValidationMessages.emailRequired
+            } else if email.isEmailValid {
+                emailValidationState = .valid
+                emailErrorMessage = ""
+            } else {
+                emailValidationState = .invalid
+                emailErrorMessage = ValidationMessages.emailInvalid
+            }
         }
     }
-
+    
     var password = "" {
         didSet {
-                if password.isEmpty {
-                    passwordValidationState = .empty
-                    passwordErrorMessage = ValidationMessages.passwordRequired
-                } else if password.isPasswordValid {
-                    passwordValidationState = .valid
-                    passwordErrorMessage = ""
-                } else {
-                    passwordValidationState = .invalid
-                    passwordErrorMessage = ValidationMessages.passwordInvalid
-                }
-
-            updateValidRegister()
+            if password.isEmpty {
+                passwordValidationState = .empty
+                passwordErrorMessage = ValidationMessages.passwordRequired
+            } else if password.isPasswordValid {
+                passwordValidationState = .valid
+                passwordErrorMessage = ""
+            } else {
+                passwordValidationState = .invalid
+                passwordErrorMessage = ValidationMessages.passwordInvalid
+            }
         }
     }
     
@@ -82,7 +76,7 @@ import Foundation
         return predicate.evaluate(with: self)
     }
     
-
+    
     
     // Normalize the string using precomposed string with canonical mapping
     //    var normalizedName: String {
@@ -96,42 +90,40 @@ import Foundation
     //    }
     
     // Computed error messages
-//    var emailErrorMessage: String? {
-//        switch emailValidationState {
-//        case .invalid:
-//            print("Email is invalid.")  // Debugging print
-//            return ValidationMessages.emailInvalid
-//        case .empty:
-//            print("Email is empty.")  // Debugging print
-//            return ValidationMessages.emailRequired
-//        default:
-//            return nil
-//        }
-//    }
+    //    var emailErrorMessage: String? {
+    //        switch emailValidationState {
+    //        case .invalid:
+    //            print("Email is invalid.")  // Debugging print
+    //            return ValidationMessages.emailInvalid
+    //        case .empty:
+    //            print("Email is empty.")  // Debugging print
+    //            return ValidationMessages.emailRequired
+    //        default:
+    //            return nil
+    //        }
+    //    }
     
-//    var passwordErrorMessage: String? {
-//        switch passwordValidationState {
-//        case .invalid:
-//            print("Password is invalid.")  // Debugging print
-//
-//            return ValidationMessages.passwordInvalid
-//        case .empty:
-//            print("Password is empty.")  // Debugging print
-//
-//            return ValidationMessages.passwordRequired
-//        default:
-//            return nil
-//        }
-//    }
-//
+    //    var passwordErrorMessage: String? {
+    //        switch passwordValidationState {
+    //        case .invalid:
+    //            print("Password is invalid.")  // Debugging print
+    //
+    //            return ValidationMessages.passwordInvalid
+    //        case .empty:
+    //            print("Password is empty.")  // Debugging print
+    //
+    //            return ValidationMessages.passwordRequired
+    //        default:
+    //            return nil
+    //        }
+    //    }
+    //
     
     func canFinalizeRegistration() -> Bool {
         return emailValidationState == .valid && passwordValidationState == .valid
     }
     
-    func updateValidRegister() {
-        isValidRegister = emailValidationState == .valid && passwordValidationState == .valid
-    }
+
     
     //    func isValidAge() -> Bool {
     //        (Calendar.current.dateComponents([.year], from: Date()).year! - birthYear) >= 21

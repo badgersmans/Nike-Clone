@@ -16,8 +16,12 @@ struct Register: View {
         FormField(value: $vm.email, icon: "envelope", placeholder: "Email", isSecure: false, validateState: vm.emailValidationState, errorMessage: vm.emailErrorMessage)
         FormField(value: $vm.password, icon: "key", placeholder: "Password", isSecure: true, validateState: vm.passwordValidationState, errorMessage: vm.passwordErrorMessage)
 
-
-        
+        Button {
+            
+        } label: {
+            Text("Login")
+        }
+        .disabled(!vm.canFinalizeRegistration())
         
         
     }
