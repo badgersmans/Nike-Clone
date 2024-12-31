@@ -40,8 +40,11 @@ struct ProductItemView: View {
                 }
             } // end zstack
             
-            // Title, category, price
+            // Title, category, price, promo message (if any)
             VStack(alignment: .leading, spacing: 5) {
+                Text("Promo Exclusion")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.red)
                 Text("Nike Alphafly 3")
                     .fontWeight(.semibold)
                 Text("Men's Road Racing Shoes")
@@ -52,6 +55,7 @@ struct ProductItemView: View {
                     .fontWeight(.semibold)
             }
             .padding(.leading, 5)
+            .padding(.top, 10)
             .frame(maxWidth: .infinity, alignment: .leading)
             
             // Shoe Color picker
